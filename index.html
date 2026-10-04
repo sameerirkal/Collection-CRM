@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollectPro | Collection CRM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i data-lucide="layers"></i>
+        </div>
+        <div>
+          <h2>Collect<span>Pro</span></h2>
+          <small>Collection Management</small>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <button class="nav-link active" data-page="dashboard">
+          <i data-lucide="layout-dashboard"></i>
+          Dashboard
+        </button>
+
+        <button class="nav-link" data-page="customers">
+          <i data-lucide="users"></i>
+          Customers
+        </button>
+
+        <button class="nav-link" data-page="followups">
+          <i data-lucide="calendar-clock"></i>
+          Follow-ups
+        </button>
+
+        <button class="nav-link" data-page="payments">
+          <i data-lucide="wallet"></i>
+          Payments
+        </button>
+
+        <button class="nav-link" data-page="reports">
+          <i data-lucide="chart-no-axes-combined"></i>
+          Reports
+        </button>
+      </nav>
+
+      <div class="top-actions">
+        <button class="icon-btn" title="Notifications">
+          <i data-lucide="bell"></i>
+        </button>
+        <div class="profile">
+          <div class="avatar">SM</div>
+          <div class="profile-info">
+            <strong>Sameer</strong>
+            <small>Collection Executive</small>
+          </div>
+          <i data-lucide="chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- DASHBOARD PAGE -->
+      <section id="dashboard" class="page active">
+
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">OVERVIEW</p>
+            <h1>Collection Dashboard</h1>
+            <p class="subtitle">Track your daily collection activities and performance.</p>
+          </div>
+
+          <div class="heading-actions">
+            <div class="date-display">
+              <i data-lucide="calendar-days"></i>
+              <span id="currentDate">Today</span>
+            </div>
+            <button class="btn-primary" id="importBtn">
+              <i data-lucide="upload"></i>
+              Import Data
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI CARDS -->
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>Total Allocated</span>
+              <div class="stat-icon blue">
+                <i data-lucide="users"></i>
+              </div>
+            </div>
+            <h2 id="totalAllocated">1,248</h2>
+            <p class="stat-note">Customers in allocation</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>Total Outstanding</span>
+              <div class="stat-icon purple">
+                <i data-lucide="wallet"></i>
+              </div>
+            </div>
+            <h2 id="totalOutstanding">₹48.6L</h2>
+            <p class="stat-note">Total allocated balance</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>Calls Completed</span>
+              <div class="stat-icon cyan">
+                <i data-lucide="phone-call"></i>
+              </div>
+            </div>
+            <h2 id="callsCompleted">186</h2>
+            <p class="stat-note">Today's calling activity</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span>PTP Cases</span>
+              <div class="stat-icon orange">
+                <i data-lucide="calendar-check"></i>
+              </div>
+            </div>
+            <h2 id="ptpCases">42</h2>
+            <p class="stat-note">Active payment promises</p>
+          </div>
+
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="analytics-grid">
+
+          <div class="panel performance-panel">
+            <div class="panel-header">
+              <div>
+                <h3>Collection Performance</h3>
+                <p>Payment collection overview</p>
+              </div>
+              <button class="select-btn">
+                This Month
+                <i data-lucide="chevron-down"></i>
+              </button>
+            </div>
+
+            <div class="collection-overview">
+              <div class="collection-amount">
+                <span>Collected Amount</span>
+                <h2>₹8,45,600</h2>
+                <small>Sample performance data</small>
+              </div>
+
+              <div class="progress-wrapper">
+                <div class="progress-ring">
+                  <div class="progress-inner">
+                    <strong>68%</strong>
+                    <span>Achievement</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="legend">
+              <span><i class="dot blue-dot"></i>Collected</span>
+              <span><i class="dot gray-dot"></i>Remaining</span>
+            </div>
+          </div>
+
+          <div class="panel activity-panel">
+            <div class="panel-header">
+              <div>
+                <h3>Today's Activity</h3>
+                <p>Calling status breakdown</p>
+              </div>
+              <i data-lucide="activity" class="muted-icon"></i>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-label">
+                  <span>RPC</span>
+                  <strong>68</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-green" style="width:75%"></div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-label">
+                  <span>NC</span>
+                  <strong>42</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-blue" style="width:48%"></div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-label">
+                  <span>PTP</span>
+                  <strong>32</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-purple" style="width:36%"></div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-label">
+                  <span>CBK</span>
+                  <strong>18</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-orange" style="width:22%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUSTOMER TABLE -->
+        <div class="panel customer-panel">
+
+          <div class="panel-header customer-header">
+            <div>
+              <h3>Recent Customers</h3>
+              <p>Latest customer allocation records</p>
+            </div>
+
+            <button class="btn-secondary" data-goto="customers">
+              View All
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+          </div>
+
+          <div class="table-toolbar">
+            <div class="search-box">
+              <i data-lucide="search"></i>
+              <input type="text" id="dashboardSearch" placeholder="Search customer...">
+            </div>
+
+            <button class="btn-secondary" id="filterBtn">
+              <i data-lucide="list-filter"></i>
+              Filter
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Mobile Number</th>
+                  <th>Outstanding</th>
+                  <th>Minimum Due</th>
+                  <th>Last Status</th>
+                  <th>PTP Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="dashboardCustomerBody">
+                <tr>
+                  <td>
+                    <div class="customer-name">
+                      <div class="table-avatar">RS</div>
+                      <div>
+                        <strong>Rahul Sharma</strong>
+                        <small>CRM001</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>98XXXXXX10</td>
+                  <td>₹45,800</td>
+                  <td>₹4,580</td>
+                  <td><span class="status-badge status-ptp">PTP</span></td>
+                  <td>05 Oct 2026</td>
+                  <td><button class="row-action" title="View"><i data-lucide="arrow-up-right"></i></button></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="customer-name">
+                      <div class="table-avatar">AK</div>
+                      <div>
+                        <strong>Amit Kumar</strong>
+                        <small>CRM002</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>97XXXXXX21</td>
+                  <td>₹62,400</td>
+                  <td>₹6,240</td>
+                  <td><span class="status-badge status-nc">NC</span></td>
+                  <td>—</td>
+                  <td><button class="row-action" title="View"><i data-lucide="arrow-up-right"></i></button></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="customer-name">
+                      <div class="table-avatar">PS</div>
+                      <div>
+                        <strong>Priya Singh</strong>
+                        <small>CRM003</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>99XXXXXX32</td>
+                  <td>₹28,900</td>
+                  <td>₹2,890</td>
+                  <td><span class="status-badge status-paid">Paid</span></td>
+                  <td>—</td>
+                  <td><button class="row-action" title="View"><i data-lucide="arrow-up-right"></i></button></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="customer-name">
+                      <div class="table-avatar">VK</div>
+                      <div>
+                        <strong>Vikram Kumar</strong>
+                        <small>CRM004</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>96XXXXXX43</td>
+                  <td>₹73,200</td>
+                  <td>₹7,320</td>
+                  <td><span class="status-badge status-cbk">CBK</span></td>
+                  <td>—</td>
+                  <td><button class="row-action" title="View"><i data-lucide="arrow-up-right"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- FOLLOW UP -->
+        <div class="panel followup-panel">
+          <div class="panel-header">
+            <div>
+              <h3>Upcoming Follow-ups</h3>
+              <p>Cases requiring your attention</p>
+            </div>
+            <button class="btn-secondary" data-goto="followups">
+              View All
+              <i data-lucide="arrow-up-right"></i>
+            </button>
+          </div>
+
+          <div class="followup-list">
+            <div class="followup-item">
+              <div class="followup-date">
+                <strong>05</strong>
+                <span>OCT</span>
+              </div>
+              <div class="followup-details">
+                <strong>Rahul Sharma</strong>
+                <p>PTP follow-up · ₹10,000</p>
+              </div>
+              <span class="status-badge status-ptp">PTP</span>
+            </div>
+
+            <div class="followup-item">
+              <div class="followup-date">
+                <strong>06</strong>
+                <span>OCT</span>
+              </div>
+              <div class="followup-details">
+                <strong>Vikram Kumar</strong>
+                <p>Call back · ₹5,000</p>
+              </div>
+              <span class="status-badge status-cbk">CBK</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- OTHER MODULE PLACEHOLDERS -->
+      <section id="customers" class="page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">CUSTOMER MANAGEMENT</p>
+            <h1>Customers</h1>
+            <p class="subtitle">Manage customer allocation and account details.</p>
+          </div>
+          <button class="btn-primary" id="addCustomerBtn">
+            <i data-lucide="user-plus"></i>
+            Add Customer
+          </button>
+        </div>
+        <div class="panel placeholder-panel">
+          <i data-lucide="users"></i>
+          <h3>Customer Management</h3>
+          <p>Customer table and management tools will be added in the next development stage.</p>
+        </div>
+      </section>
+
+      <section id="followups" class="page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">FOLLOW-UP MANAGEMENT</p>
+            <h1>Follow-ups</h1>
+            <p class="subtitle">Monitor payment promises and pending customer calls.</p>
+          </div>
+        </div>
+        <div class="panel placeholder-panel">
+          <i data-lucide="calendar-clock"></i>
+          <h3>Follow-up Tracker</h3>
+          <p>Follow-up calendar and tracking features will be added in a later stage.</p>
+        </div>
+      </section>
+
+      <section id="payments" class="page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">PAYMENT MANAGEMENT</p>
+            <h1>Payments</h1>
+            <p class="subtitle">Track payment commitments and payment updates.</p>
+          </div>
+        </div>
+        <div class="panel placeholder-panel">
+          <i data-lucide="wallet"></i>
+          <h3>Payment Tracker</h3>
+          <p>Payment entries and reconciliation tools will be added later.</p>
+        </div>
+      </section>
+
+      <section id="reports" class="page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">ANALYTICS</p>
+            <h1>Reports</h1>
+            <p class="subtitle">Analyze your collection performance.</p>
+          </div>
+        </div>
+        <div class="panel placeholder-panel">
+          <i data-lucide="chart-no-axes-combined"></i>
+          <h3>Collection Reports</h3>
+          <p>Detailed MIS and export options will be implemented in a later stage.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>CollectPro CRM</span>
+      <span>Version 1.0 · Frontend Preview</span>
+    </footer>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
